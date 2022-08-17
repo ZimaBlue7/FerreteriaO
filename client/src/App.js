@@ -1,8 +1,32 @@
-import React,{Component} from "react";
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import '../src/Styles/App.css';
 
-class App extends Component {
+/* Components */
+import Home from './components/Home/Home'
+import Productos from './components/Products/Productos'
+
+
+function App() {
+
+  return (  
+    <Router>
+      <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/productos' element={<Productos/>}/>
+      </Routes>
+    </Router>
+  );
+  
+}
+
+export default App;
+
+/* class App extends Component {
 
   constructor(props) {
     super(props);
@@ -19,27 +43,13 @@ componentWillMount() {
     this.callAPI();
 }
 render(){
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p className="App-intro">{this.state.apiResponse}</p>
-      </header>
-    </div>
+  return (  
+    <Router>
+      <Routes>
+      <Route path='/' element={<Home/>} />
+      </Routes>
+    </Router>
   );
 }
   
-}
-
-export default App;
+} */
